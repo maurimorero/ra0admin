@@ -1,0 +1,221 @@
+body
+{
+    font-family:Arial,sans-serif;
+    font-weight: 500;
+    color:#333;
+    background-image: url("../img/ReactorByN.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed
+}
+
+a:link
+{
+ text-decoration:none;
+}
+
+//Menu
+nav {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    font-family: Arial,sans-serif;
+}
+ul.fullnav, ul.fullnav ul {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 0;
+    text-align:
+    center;
+}
+ul.fullnav {
+    //border-top: 4px double #666;
+    //border-bottom: 4px solid #999;
+    background: #000000 ;
+    opacity: 0.85;
+}
+ul.fullnav li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 60px;
+}
+ul.fullnav li a {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+    //text-transform: uppercase;
+    color: #FFFFFF;
+}
+ul.fullnav li ul {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background:  #544c4c ;
+    line-height: 0;
+    z-index: 3;
+}
+ul.fullnav ul a {
+    color: white;
+}
+ul.fullnav li:hover a {
+    background:  #544c4c ;
+}
+ul.fullnav li:hover ul {
+    height: auto;
+}
+ul.fullnav li:hover ul li a {
+    background: transparent;
+}
+ul.fullnav li:hover ul li a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+#boxLogin
+{
+    width: 320px;
+    margin: 30px auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #FFFFFF;
+    font-size:13px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.85;
+}
+
+#RA0
+{
+    width: 320px;
+    margin: 30px auto;
+    text-align: left;
+    padding: 50px;
+    font-size:13px;
+    opacity: 0.85;
+}
+
+#RA0Home
+{
+    width: 320px;
+    margin: 10px auto;
+    text-align: left;
+    padding: 20px;
+    font-size:13px;
+    opacity: 0.85;
+}
+
+#boxRegistro
+{
+    width: 700px;
+    margin: 50px auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #FFFFFF;
+    font-size:13px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.85;
+}
+
+
+#boxHome
+{
+    width: 400px;
+    margin: 30px auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #FFFFFF;
+    font-size:13px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.95;
+}
+
+#boxHome1
+{
+    width: 700px;
+    margin: 30px auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #FFFFFF;
+    font-size:13px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.95;
+}
+
+#boxHome2
+{
+    width: 800px;
+    margin: 30px auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #FFFFFF;
+    font-size:13px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.95;
+}
+
+#boxSenal
+{
+    width: 500px;
+    margin: 30px auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #FFFFFF;
+    font-size:13px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.85;
+}
+
+#boxPublicacion
+{
+    width: 600px;
+    margin: 30px auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #FFFFFF;
+    font-size:13px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.85;
+}
+
+.datagrid table { border-collapse: collapse; text-align: left; width: 100%; } .datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #8C8C8C; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }.datagrid table td, .datagrid table th { padding: 3px 10px; }.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8C8C8C), color-stop(1, #7D7D7D) );background:-moz-linear-gradient( center top, #8C8C8C 5%, #7D7D7D 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8C8C8C', endColorstr='#7D7D7D');background-color:#8C8C8C; color:#FFFFFF; font-size: 15px; font-weight: bold; border-left: 1px solid #A3A3A3; } .datagrid table thead th:first-child { border: none; }.datagrid table tbody td { color: #7D7D7D; border-left: 1px solid #DBDBDB;font-size: 12px;font-weight: normal; }.datagrid table tbody .alt td { background: #EBEBEB; color: #7D7D7D; }.datagrid table tbody td:first-child { border-left: none; }.datagrid table tbody tr:last-child td { border-bottom: none; }.datagrid table tfoot td div { border-top: 1px solid #8C8C8C;background: #EBEBEB;} .datagrid table tfoot td { padding: 0; font-size: 12px } .datagrid table tfoot td div{ padding: 2px; }.datagrid table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }.datagrid table tfoot  li { display: inline; }.datagrid table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #F5F5F5;border: 1px solid #8C8C8C;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8C8C8C), color-stop(1, #7D7D7D) );background:-moz-linear-gradient( center top, #8C8C8C 5%, #7D7D7D 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8C8C8C', endColorstr='#7D7D7D');background-color:#8C8C8C; }.datagrid table tfoot ul.active, .datagrid table tfoot ul a:hover { text-decoration: none;border-color: #7D7D7D; color: #F5F5F5; background: none; background-color:#8C8C8C;}div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }
+
+.boton{
+    text-decoration: none;
+    margin: 10px 2px;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #f7ce6c;
+    border-radius: 6px;
+    border: 2px solid #f7ce6c;
+}
+
+.separador{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    color:   #34495e;
+}
+
+input[type=submit] {
+    text-decoration: none;
+    margin: 5px 2px;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #f7ce6c;
+    border-radius: 6px;
+    border: 2px solid #f7ce6c;
+}

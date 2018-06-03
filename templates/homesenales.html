@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+		<div id="boxHome">
+			<h2>Base de datos de Señales</h2>
+
+			<a href="{% url 'senales:nueva' %}" class="boton">Nueva señal</a>
+			<a href="{% url 'senales:nuevabornera' %}" class="boton">Nueva bornera</a>
+			<a href="{% url 'senales:nuevochasis' %}" class="boton">Nuevo chasis</a>
+			<br><br>
+			<h3>Búsqueda:</h3>
+
+			<form method="post" id="busqueda">
+				{% csrf_token %}
+				<input type="radio" name="tipobusqueda" value=1  class="busquedaradio" checked="true"> Por Bornera<br>
+				<input type="radio" name="tipobusqueda" value=2  class="busquedaradio" > Por Señal<br>
+				<input type="text" name="campobusqueda" class="busquedatxt">
+				<button type="submit">Buscar</button>
+
+			</form>
+			<br>
+            <h2>Listado de señales</h2>
+			<div class="datagrid">
+			<table>
+				<thead>
+				<tr>
+					<th>Señal</th>
+					<th>Código</th>
+					<th>Tipo</th>
+					<th>Rango</th>
+				</tr>
+				</thead>
+				<tbody>
+				{% for sen in senales %}
+				<tr>
+					<td><a href="{% url 'senales:actualizasenal' sen.id %}">{{ sen.nombre }}</a></td>
+					<td>{{ sen.codigo }}</td>
+					<td>{{ sen.tipoSenal.name }}</td>
+					<td>{{ sen.rango }}</td>
+				</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+			</div>
+		</div>
+
+
+{% endblock %}

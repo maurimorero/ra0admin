@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div id="boxSenal">
+
+<h3>Resultado de su búsqueda:</h3>
+<div class="datagrid">
+<table>
+	<thead>
+	<tr>
+		<th>Señal</th>
+        <th>Código</th>
+        <th>Tipo</th>
+        <th>Rango</th>
+	</tr>
+	</thead>
+	<tbody>
+	{% for sen in senales %}
+	<tr>
+		<td><a href="{% url 'senales:actualizasenal' sen.id %}">{{ sen.nombre }}</a></td>
+        <td>{{ sen.codigo }}</td>
+        <td>{{ sen.tipoSenal.name }}</td>
+        <td>{{ sen.rango }}</td>
+	</tr>
+	{% endfor %}
+    	{% for sen in senales1 %}
+	<tr>
+		<td><a href="{% url 'senales:actualizasenal' sen.id %}">{{ sen.nombre }}</a></td>
+        <td>{{ sen.codigo }}</td>
+        <td>{{ sen.tipoSenal.name }}</td>
+        <td>{{ sen.rango }}</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>
+</div>
+</div>
+
+{% endblock %}

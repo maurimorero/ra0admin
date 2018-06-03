@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div id="boxSenal">
+<h3>Resultado de su búsqueda:</h3>
+<div class="datagrid">
+	<table>
+	<thead>
+	<tr>
+		<th>Bornera</th>
+        <th>Descripción</th>
+	</tr>
+	</thead>
+	<tbody>
+	{% for bor in borneras %}
+	<tr>
+		<td><a href="{% url 'senales:conexionesbornera' bor.id %}">{{ bor.name }}</a></td>
+        <td>{{ bor.description }}</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>
+</div>
+</div>
+
+{% endblock %}

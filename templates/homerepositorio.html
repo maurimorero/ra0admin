@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+
+			<div id="boxHome1">
+				<h2>Seguimiento de documentación</h2>
+			<a href="{% url 'repositorio:nuevo' %}" class="boton">Nuevo documento</a>
+			<h3>Publicaciones:</h3>
+                <div class="datagrid">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Codificación</th>
+                        <th>Estado</th>
+                        <th>Ubicacion</th>
+                        <th>Última actualizacion</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for pub in publicaciones %}
+                    <tr>
+                        <td><a href="{% url 'repositorio:actualizapublicacion' pub.id %}">{{ pub.nombreDoc }}</a></td>
+                        <td>{{ pub.codificacion }}</a></td>
+                        <td>{{ pub.estado.nombre }}</a></td>
+                        <td>{{ pub.ubicacion }}</a></td>
+                        <td>{{ pub.fechaActualizacion }}</a></td>
+                    </tr>
+                    {% endfor %}
+                    <tbody>
+                </table>
+                </div>
+			</div>
+
+
+{% endblock %}

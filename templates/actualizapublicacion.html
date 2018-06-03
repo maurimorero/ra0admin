@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div id="boxPublicacion">
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}{% endif %}
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {% if estado == 4 %}
+    <br><label>Nombre del documento: {{ publicacion.nombreDoc }} </label>
+    <br><br><label>Formato: {{ publicacion.formato }}</label>
+    <br><br><label>Ubicacion: {{ publicacion.ubicacion }}</label>
+    <br><br><label>Codificacion: {{ publicacion.codificacion }}</label><br><br>
+
+    {% else %}
+        {{ publicacionForm.as_p }}
+    {% endif %}
+    <label>Estado: {{ publicacion.estado.nombre }}</label><br>
+
+
+{% if estado == 1 %}
+    <br><a href="{% url 'repositorio:nuevarevision' publicacion.id %}" class="boton">Nueva revision</a> -
+    <a href="{% url 'repositorio:finalizarelaboracion' publicacion.id %}" class="boton">Finalizar Elaboración</a>
+    <br><button type="submit" class="boton">Guardar</button>
+{% endif %}
+{% if estado == 2 %}
+    <a href="{% url 'repositorio:revisar' publicacion.id %}" class="boton">Revisar</a>
+    <button type="submit" class="boton">Guardar</button>
+{% endif %}
+{% if estado == 3 %}
+    {% if request.user.is_superuser %}
+        <br><strong><label>Nota: Recuerde guardar los cambios antes de aprobar</label></strong>
+        <br><a href="{% url 'repositorio:aprobar' publicacion.id %}" class="boton">Aprobar</a>
+    {% endif %}
+    <button type="submit" class="boton">Guardar</button>
+{% endif %}
+</form>
+
+
+<h3>Revisiones:</h3>
+    <div class="datagrid">
+        <table>
+            <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Órden</th>
+                <th>Comentarios</th>
+                <th>Revisor</th>
+                <th>Completada</th>
+                {% if estado == 1 %}
+                <th>Acción</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for rev in revisiones %}
+            <tr>
+                <td>{{ rev.fecha }}</td>
+                <td>{{ rev.orden }}</td>
+                <td>{{ rev.comentarios }}</td>
+                <td>{{ rev.usuario.user.username }}</td>
+                <td>{{ rev.completada }}</td>
+                {% if estado == 1 %}
+                <td><a href="{% url 'repositorio:eliminarevision' publicacion.id rev.id %}">Borrar</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

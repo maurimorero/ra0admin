@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang=“es”>
+    <head>
+        {% load static %}
+            <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+        <meta charset=“utf-8” />
+        <title> {% block titulo %} RA-0 Admin {% endblock %}</title>
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+    {% block header %}
+    <h4> </h4>
+    <h4> </h4>
+    	<nav>
+	 <ul class="fullnav">
+         <li>
+	        <a href="{% url 'usuarios:usuarios_home' %}">Home</a>
+        </li>
+         <li>
+	        <div class="separador">|</div>
+        </li>
+         <li>
+	        <a href="{% url 'senales_home' %}">Base de datos de señales</a>
+        </li>
+         <li>
+	        <div class="separador">|</div>
+        </li>
+         <li>
+	        <a href="{% url 'repositorio_home' %}">Repositorio de documentación</a>
+        </li>
+         <li>
+	        <div class="separador">|</div>
+        </li>
+        <li>
+	   		<a href="{% url 'usuarios:usuarios_datos' %}"> {{ request.user.username }} </a>
+        </li>
+         <li>
+	        <div class="separador">|</div>
+        </li>
+         <li>
+	   		<a href="{% url 'logout' %}">Salir</a>
+        </li>
+	 </ul>
+	</nav>
+    {% endblock %}
+
+    {% block content %}
+    <h5> </h5>
+    <a href="{% url 'logout' %}">Salir</a>
+    {% endblock %}
+
+    {% block footer %}
+    <h5> </h5>
+    {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div id="boxSenal">
+<h3>Conexiones de la Bornera {{ bornera.name }} </h3>
+<div class="datagrid">
+<table>
+	<thead>
+	<tr>
+		<th>Nombre de señal</th>
+        <th>Código de señal</th>
+        <th>Tipo de conexión</th>
+        <th>Pin</th>
+		<th>Descripción</th>
+	</tr>
+	</thead>
+	<tbody>
+	{% for con in conexiones %}
+	<tr>
+		<td>{{ con.senal.nombre }}</td>
+        <td>{{ con.senal.codigo }}</td>
+        <td>{{ con.tipoConexion.name}}</td>
+        <td>{{ con.pin }}</td>
+		<td>{{ con.descripcion}}</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>
+</div>
+</div>
+
+{% endblock %}
